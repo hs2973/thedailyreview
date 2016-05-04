@@ -46,119 +46,34 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" ng-controller="NewsListCtrl">
       <div class="row">
         <div class="col-xs-12 col-sm-9 col-md-8 main">
-          <div class="media">
+          <div class="media" ng-repeat="news in news_list">
             <div class="media-left">
-              <span>01</span>
+              <span>{{news.rank}}</span>
             </div>
             <div class="media-body">
-              <h4 class="media-heading"><a href="#">Prince 'had painkillers on him'</a></h4>
-              <p class="media-subheading">Prescription medication found on Prince’s body, official says.</p>
+              <h4 class="media-heading"><a href="#">{{news.heading}}</a></h4>
+              <p class="media-subheading" ng-show="{{news.sub_heading != ''}}">{{news.sub_heading}}</p>
 
-              <p>
-                <img src="assets/img/sample.png" width="100%">
+              <p ng-show="{{news.image != ''}}">
+                <img ng-src="{{news.image}}" width="100%">
               </p>
 
-              <p class="description">The UN envoy to Syria has urged the US and Russia to intervene "at the highest level" to save struggling peace talks.</p>
+              <p class="description" ng-show="{{news.description != ''}}">{{news.description}}</p>
             </div>
 
             <div class="clearfix"></div>
 
             <div class="media-left">
-              <img src="assets/img/CNN.png" width="64px">
+              <img ng-src="assets/img/{{news.source}}.png" width="64px">
             </div>
             <div class="media-body">
-              <p><strong>By Evan Perez, CNN Justice Reporter</strong><br/>
-              Wednesday, April 27</p>
+              <p><strong>{{news.author}}</strong><br/>
+              {{news.date_time}}</p>
             </div>
-          </div>
-
-          <div class="media">
-            <div class="media-left">
-              <span>02</span>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Syria conflict: UN envoy calls on US and Russia to save talks</a></h4>
-
-              <p>
-                <img src="assets/img/sample2.png" width="100%">
-              </p>
-
-              <p class="description">The UN envoy to Syria has urged the US and Russia to intervene "at the highest level" to save struggling peace talks.</p>
-            </div>
-
-            <div class="clearfix"></div>
-            
-            <div class="media-left">
-              <img src="assets/img/BBC.png" width="64px">
-            </div>
-            <div class="media-body">
-              <p><strong>BBC</strong><br/>
-              Wednesday, April 27</p>
-            </div>
-          </div>
-
-          <div class="media">
-            <div class="media-left">
-              <span>03</span>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Syria conflict: UN envoy calls on US and Russia to save talks</a></h4>
-              <p class="description">The UN envoy to Syria has urged the US and Russia to intervene "at the highest level" to save struggling peace talks.</p>
-            </div>
-
-            <div class="clearfix"></div>
-            
-            <div class="media-left">
-              <img src="assets/img/NYT.png" width="80px">
-            </div>
-            <div class="media-body">
-              <p><strong>The New York Times</strong><br/>
-              Wednesday, April 27</p>
-            </div>
-          </div>
-
-          <div class="media">
-            <div class="media-left">
-              <span>04</span>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Syria conflict: UN envoy calls on US and Russia to save talks</a></h4>
-              <p class="description">The UN envoy to Syria has urged the US and Russia to intervene "at the highest level" to save struggling peace talks.</p>
-            </div>
-
-            <div class="clearfix"></div>
-            
-            <div class="media-left">
-              <img src="assets/img/theguardian.png" width="80px">
-            </div>
-            <div class="media-body">
-              <p><strong>The Guardian</strong><br/>
-              Wednesday, April 27</p>
-            </div>
-          </div>
-
-          <div class="media">
-            <div class="media-left">
-              <span>05</span>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Syria conflict: UN envoy calls on US and Russia to save talks</a></h4>
-              <p class="description">The UN envoy to Syria has urged the US and Russia to intervene "at the highest level" to save struggling peace talks.</p>
-            </div>
-
-            <div class="clearfix"></div>
-            
-            <div class="media-left">
-              <img src="assets/img/CNN.png" width="64px">
-            </div>
-            <div class="media-body">
-              <p><strong>CNN</strong><br/>
-              Wednesday, April 27</p>
-            </div>
-          </div>
+          </div><!-- end of .media -->
         </div>
 
         <div class="col-xs-12 col-sm-3 col-md-4 sidebar">
