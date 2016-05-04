@@ -9,6 +9,7 @@
 
     <!-- Angular JS -->
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-cloak>
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
@@ -33,20 +34,26 @@
       </div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" ng-controller="TabController as tab">
       <div class="container">          
         <ul>
-          <li>US</li>
-          <li>World</li>
-          <li>Money</li>
-          <li>Technology</li>
-          <li>Sports</li>
-          <li>Entertainment</li>
+          <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">US</a></li>
+          <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">World</a></li>
+          <li ng-class="{active:tab.isSet(3)}"><a href ng-click="tab.setTab(3)">Money</a></li>
+          <li ng-class="{active:tab.isSet(4)}"><a href ng-click="tab.setTab(4)">Technology</a></li>
+          <li ng-class="{active:tab.isSet(5)}"><a href ng-click="tab.setTab(5)">Sports</a></li>
+          <li ng-class="{active:tab.isSet(6)}"><a href ng-click="tab.setTab(6)">Entertainment</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="container" ng-controller="NewsListCtrl">
+      <div ng-show="loading" class="loading">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-12 col-sm-9 col-md-8 main">
           <div class="media" ng-repeat="news in news_list">
