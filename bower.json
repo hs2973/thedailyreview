@@ -1,0 +1,30 @@
+{
+  "name": "Himal Shrestha",
+  "authors": [
+    "Himal"
+  ],
+  "description": "The Daily Review Project",
+  "main": "index.html",
+  "keywords": [
+    "Daily",
+    "Review",
+    "News",
+    "Top",
+    "Stories"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.dailyreview.today",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "1.5.5",
+    "bootstrap": "^3.3.6",
+    "normalize-css": "^4.1.1"
+  }
+}

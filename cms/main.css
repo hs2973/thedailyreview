@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Main Container
+   ========================================================================== */
+.navbar{
+	margin-bottom: 0;
+	z-index: 10000;
+}
+
+.main{
+	background-color: #ccc;
+	height: 100%;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar{
+	background-color: #eee;
+	height: 100%;
+	padding: 20px;
+	margin: 0;
+	position: relative;
+}
+
+#drop{
+  width: 100%;
+  min-height: 400px;
+  /*overflow: scroll;*/
+  background: #fff;
+}
+
+.highlight{
+  border: 2px dashed red;
+}
+
+#drop img{
+	width: 100%;
+	margin-bottom: 10px;
+}

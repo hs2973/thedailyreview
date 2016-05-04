@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backend Panel</title>
+</head>
+<body width="100%" style="margin:0px; padding: 0px; overflow: hidden;">
+	<iframe src="http://edition.cnn.com/2016/04/20/opinions/college-merit-aid-steals-from-low-income-students-levy/index.html" width="100%" height="1200px"></iframe>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		iframe = $('iframe');
+
+		var script   = document.createElement("script");
+		script.type  = "text/javascript";
+		script.src   = "inject-script.js"; // Or:
+		script.text  = "alert('injected');";
+		alert('dom ready');
+
+		iframe.contents().find("body").appendChild(script);
+	});
+
+	</script>
+</body>
+</html>

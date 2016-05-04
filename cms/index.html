@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>The Daily Review</title>
+
+    <!-- Angular JS -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sticky-footer.css" rel="stylesheet">
+
+    <link href="main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <form id="search" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input id="iframeUrl" type="text" class="form-control" placeholder="Enter URL here..." style="width: 600px;">
+            </div>
+            <button id="reloadIframeBtn" type="submit" class="btn btn-default">Load</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8 main">
+          <iframe id="iframeWrapper" src="http://edition.cnn.com/2016/04/20/opinions/college-merit-aid-steals-from-low-income-students-levy/index.html" width="100%" height="100%" border="0" sandbox>
+          </iframe>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 sidebar">
+          <form>
+            <div class="form-group">
+              <label for="newsTitle">Title of the News</label>
+              <input type="text" class="form-control" id="newsTitle" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="newsSubTitle">Sub Title</label>
+              <input type="text" class="form-control" id="newsSubTitle" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="authorName">Name of the Author</label>
+              <input type="text" class="form-control" id="authorName" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="dateTime">Date/Time</label>
+              <input type="text" class="form-control" id="dateTime" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="imageBox">Images</label>
+              <img alt="Is college worth the cost?" class="media__image" src="http://i2.cdn.turner.com/cnnnext/dam/assets/150128103649-orig-cost-college-education-debt-00001530-large-169.jpg">
+              <section id="drop">
+                <p class="info">Drop here for info about the dragged item</p>
+              </section>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Check me out
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include ../all compiled plugins (below), or include individual files as needed -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
