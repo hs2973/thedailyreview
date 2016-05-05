@@ -1,7 +1,7 @@
 (function () {
 	var app = angular.module('mainApp', []);
 
-	app.controller('NewsListCtrl',['$scope', '$http', function ($scope, $http) {
+	app.controller('NewsListCtrl',['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 	  $http.get('data.json').success(function(data) {
 	    $scope.news_list = data;
 	  });
@@ -11,12 +11,12 @@
 	  $scope.$on('tab-changed', function(event, tabObj) {
 
 	  	$scope.loading = true;
-	    $http.get('data2.json').success(function(data) {
-		    
-		    $scope.news_list = data;
-		    $scope.loading = false;
-		    
-		  });
+	  	$timeout(function() {
+		    $http.get('data2.json').success(function(data) {
+			    $scope.news_list = data;
+			    $scope.loading = false;
+			  });
+			}, 1500);
 
 			$scope.orderProp = 'rank';
 	  });
